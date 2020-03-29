@@ -1,0 +1,229 @@
+@import "./mixin.less";
+@import "./transition.less";
+@import "./theme.less";
+@import "../fonts/iconfont.css";
+
+body {
+  font-family: Monospaced Number, Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.5715;
+  font-size: 14px;
+  color: @color-theme;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: @color-background;
+}
+
+label {
+  font-weight: 400;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.font12 {
+  font-size: @font-size-12;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+.bg-color {
+  background-color: @color-background;
+}
+
+// custom
+.error-page {
+  width: 100%;
+  height: 100%;
+  background: @color-background;
+  padding-top: 100px;
+  text-align: center;
+
+  .title {
+    color: #434e59;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+    margin-bottom: 24px;
+  }
+
+  .info {
+    color: rgba(0, 0, 0, .45);
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+}
+
+.divider-wrapper {
+  padding: 16px 80px;
+}
+
+.main-container {
+  margin-top: 60px;
+  padding: 0 10px;
+}
+
+.page-container {
+  padding: 0 10px;
+
+  &.padded {
+    padding: 10px;
+  }
+}
+
+.cell-group-title {
+  padding: 10px 15px 6px;
+  color: #999;
+  font-size: 14px;
+}
+
+.btn-wrapper {
+  width: 100%;
+  background-color: #fff;
+
+  &.fixed-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &.padded {
+    padding: 16px;
+  }
+
+  &.padded-mini {
+    padding: 8px 16px;
+  }
+
+  &.tool-bar {
+    background-color: #fff;
+    padding: 8px;
+    text-align: right;
+  }
+
+  .van-button + .van-button {
+    margin-left: 8px;
+  }
+}
+
+.cell-container {
+  background-color: #fff;
+  margin: 0 10px;
+
+  &.cell-container {
+    margin-top: 10px;
+  }
+
+  .weui-cells {
+    &:after,
+    &:before {
+      border: 0;
+    }
+  }
+}
+
+.demo-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(69, 90, 100, .6);
+  padding: 20px 15px 15px;
+}
+
+.demo-block {
+  padding: 16px;
+  background-color: #fff;
+}
+
+code {
+  border-radius: 4px;
+  padding: 16px;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  overflow-x: auto;
+  line-height: 22px;
+  word-break: break-all;
+  white-space: pre-wrap;
+  color: #455a64;
+  font-family: Consolas, Menlo, Courier, monospace;
+  background: #f7f7f7;
+
+  & + code {
+    margin-top: 12px;
+  }
+}
+
+.block {
+  height: 46px;
+}

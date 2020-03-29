@@ -1,0 +1,44 @@
+{
+  "name": "vant-tpl",
+  "version": "2.5.8",
+  "description": "vant-mall-tpl",
+  "author": "Chan <jasonchenzehui@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "vue-cli-service serve --mode development",
+    "build:stage": "vue-cli-service build --mode staging",
+    "build:prod": "vue-cli-service build --mode production"
+  },
+  "keywords": [
+    "vue",
+    "mall",
+    "vant",
+    "boilerplate",
+    "mall-template"
+  ],
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "better-scroll": "^1.15.2",
+    "core-js": "^2.6.11",
+    "fastclick": "^1.0.6",
+    "js-cookie": "^2.2.1",
+    "vant": "^2.5.8",
+    "vue": "^2.6.11",
+    "vue-count-to": "^1.0.13",
+    "vue-i18n": "^8.15.7",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.1.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "babel-plugin-import": "^1.13.0",
+    "less": "^3.11.1",
+    "less-loader": "^4.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

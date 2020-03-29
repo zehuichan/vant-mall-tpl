@@ -1,0 +1,58 @@
+{
+  "id": "849735",
+  "name": "vant-tpl",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9214980",
+      "name": "播放记录_line",
+      "font_class": "bofangjilu",
+      "unicode": "e874",
+      "unicode_decimal": 59508
+    },
+    {
+      "icon_id": "9214990",
+      "name": "定位_line",
+      "font_class": "dingwei",
+      "unicode": "e875",
+      "unicode_decimal": 59509
+    },
+    {
+      "icon_id": "9215012",
+      "name": "首页_line",
+      "font_class": "shouye",
+      "unicode": "e87b",
+      "unicode_decimal": 59515
+    },
+    {
+      "icon_id": "9215028",
+      "name": "我的_line",
+      "font_class": "wode",
+      "unicode": "e87d",
+      "unicode_decimal": 59517
+    },
+    {
+      "icon_id": "9215034",
+      "name": "消息_line",
+      "font_class": "xiaoxi",
+      "unicode": "e87e",
+      "unicode_decimal": 59518
+    },
+    {
+      "icon_id": "11072593",
+      "name": "88-角标-未选中",
+      "font_class": "-inactive",
+      "unicode": "e834",
+      "unicode_decimal": 59444
+    },
+    {
+      "icon_id": "11072597",
+      "name": "89-角标-选中",
+      "font_class": "-active",
+      "unicode": "e835",
+      "unicode_decimal": 59445
+    }
+  ]
+}
