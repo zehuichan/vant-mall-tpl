@@ -9,7 +9,7 @@ const name = 'vue Vant Mall Tpl' // page title
 const port = 8080 // dev port
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
+  publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development' ? 'error' : false,
@@ -51,7 +51,7 @@ module.exports = {
       .end()
 
     config
-    // https://webpack.js.org/configuration/devtool/#development
+      // https://webpack.js.org/configuration/devtool/#development
       .when(process.env.NODE_ENV === 'development',
         config => config.devtool('cheap-source-map')
       )
