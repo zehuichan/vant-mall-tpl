@@ -7,8 +7,8 @@
       readonly
       clickable
       @click.stop="onClick"
-      @click-right-icon.stop="onClear">
-    </van-field>
+      @click-right-icon.stop="onClear"
+    />
 
     <van-popup v-model="show" position="bottom" get-container="body">
       <van-area
@@ -16,8 +16,8 @@
         :area-list="area"
         :columns-placeholder="['请选择', '请选择', '请选择']"
         @cancel="onCancel"
-        @confirm="onConfirm">
-      </van-area>
+        @confirm="onConfirm"
+      />
     </van-popup>
   </div>
 </template>

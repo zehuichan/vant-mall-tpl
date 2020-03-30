@@ -1,7 +1,9 @@
 export default {
   navbar: {
     home: 'Home',
-    message: 'Message',
-    me: 'Member',
+    sort: 'Sort',
+    circle: 'Circle',
+    cart: 'Cart',
+    my: 'My',
   }
 }

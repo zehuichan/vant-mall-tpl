@@ -74,7 +74,7 @@ const data = [
 ]
 
 const state = {
-  coupon: [],
+  coupon: data,
 }
 
 const mutations = {
@@ -94,7 +94,7 @@ const actions = {
 }
 
 export default {
-  namespaced: 'coupon',
+  namespaced: true,
   state,
   mutations,
   actions

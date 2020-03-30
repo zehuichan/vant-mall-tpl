@@ -238,12 +238,17 @@ export function getData(el, name, val) {
 }
 
 export function saveToLocal(key, value) {
+  console.log(value)
   window.localStorage.setItem(key, JSON.stringify(value))
 }
 
 export function loadFromLocal(key) {
   const ret = window.localStorage.getItem(key)
   return JSON.parse(ret)
+}
+
+export function removeFromLocal(key) {
+  window.localStorage.removeItem(key)
 }
 
 export function getBase64(file, resultType = 'dataUrl') {

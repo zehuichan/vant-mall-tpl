@@ -28,7 +28,7 @@ const actions = {
 
 
 export default {
-  namespaced: 'app',
+  namespaced: true,
   state,
   mutations,
   actions

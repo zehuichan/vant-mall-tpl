@@ -5,31 +5,27 @@ const getters = {
   // loading
   loading: state => state.app.loading,
 
-  // tabbar
-  tabbar: state => state.app.tabbar,
-
   // wechat
   wechat_ready: state => state.wechat.wechat_ready,
 
   // userInfo
   avatar: state => state.user.avatar,
-  cellphone: state => state.user.cellphone,
-  username: state => state.user.username,
-  level: state => state.user.level,
+  mobile: state => state.user.mobile,
+  gender: state => state.user.gender,
+  birthday: state => state.user.birthday,
+  nickname: state => state.user.nickname,
+
+  // shopCart
+  items: state => state.cart.items,
+  items_length: state => Array.from(state.cart.items).reduce((prev, curr) => curr.count + prev, 0),
 
   // address
   address_list: state => state.address.address_list,
+  default_list: state => state.address.address_list.find((item) => item.isDefault === 1),
   chosen_address: state => state.address.chosen_address,
-  default_address: state => state.address.address_list.find((item) => item.default === 1),
 
   // coupon
   coupon: state => state.coupon.coupon,
-
-  // auth
-  token: state => state.auth.token,
-
-  // shopCart
-  items: state => state.cart.items
 }
 
 export default getters

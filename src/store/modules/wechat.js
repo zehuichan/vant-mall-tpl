@@ -36,7 +36,7 @@ const actions = {
 
 
 export default {
-  namespaced: 'wechat',
+  namespaced: true,
   state,
   mutations,
   actions

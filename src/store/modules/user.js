@@ -1,24 +1,36 @@
-// import {getUserInfo, loginByTel} from '@/api/user'
+// filters
+import {formatPhone} from '@/filters'
+// utils
+import {saveToLocal, loadFromLocal, removeFromLocal} from '@/utils'
 
 const state = {
-  avatar: '',
-  cellphone: '',
-  username: '',
-  level: 'v2',
+  avatar: loadFromLocal('avatar') || 'https://mall.s.maizuo.com/e915e2c990c30f8efa9e30bc75da41ee.jpg',
+  mobile: loadFromLocal('mobile'),
+  gender: loadFromLocal('gender'),
+  birthday: loadFromLocal('birthday'),
+  nickname: loadFromLocal('nickname'),
 }
 
 const mutations = {
-  SET_AVATAR: (state, avatar) => {
+  SET_AVATAR(state, avatar) {
     state.avatar = avatar
+    saveToLocal('avatar', avatar)
   },
-  SET_CELL_PHONE(state, cellphone) {
-    state.cellphone = cellphone
+  SET_MOBILE(state, mobile) {
+    state.mobile = mobile
+    saveToLocal('mobile', mobile)
   },
-  SET_USER_NAME(state, username) {
-    state.username = username
+  SET_GENDER(state, gender) {
+    state.gender = gender
+    saveToLocal('gender', gender)
   },
-  SET_LEVEL(state, level) {
-    state.level = level
+  SET_BIRTHDAY(state, birthday) {
+    state.birthday = birthday
+    saveToLocal('birthday', birthday)
+  },
+  SET_NICKNANE(state, nickname) {
+    state.nickname = nickname
+    saveToLocal('nickname', nickname)
   },
 }
 
@@ -58,9 +70,22 @@ const actions = {
   getUserInfo({commit, state}) {
     return new Promise((resolve, reject) => {
       commit('SET_AVATAR', 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLYMVgaumib5h42GP4pAlLTQCpzFAmUZTVUg4MmH9eFyb4shrm6Ux2Ocic1ic0ekTWEYVfxibGcMMC3UQ/132')
-      commit('SET_CELL_PHONE', '15800066380')
-      commit('SET_USER_NAME', 'chan')
-      commit('SET_LEVEL', 'v3')
+      commit('SET_MOBILE', loadFromLocal('mobile') || formatPhone('15800066380'))
+      commit('SET_NICKNANE', loadFromLocal('nickname') || '陈泽辉')
+      resolve()
+    })
+  },
+
+  setGender({commit, state}, payload) {
+    return new Promise((resolve, reject) => {
+      commit('SET_GENDER', payload)
+      resolve()
+    })
+  },
+
+  setBirthday({commit, state}, payload) {
+    return new Promise((resolve, reject) => {
+      commit('SET_BIRTHDAY', payload)
       resolve()
     })
   }
@@ -68,7 +93,7 @@ const actions = {
 
 
 export default {
-  namespaced: 'user',
+  namespaced: true,
   state,
   mutations,
   actions
