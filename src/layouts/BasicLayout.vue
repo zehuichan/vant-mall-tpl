@@ -44,10 +44,15 @@
         active: this.$route.name
       }
     },
-    computed:{
+    computed: {
       ...mapGetters([
         'items_length'
       ])
+    },
+    watch: {
+      '$route'(to, from) {
+        this.active = to.name
+      }
     },
     components: {
       [Tabbar.name]: Tabbar,
