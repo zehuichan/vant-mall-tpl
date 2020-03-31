@@ -25,7 +25,7 @@
     "fastclick": "^1.0.6",
     "js-cookie": "^2.2.1",
     "vanilla-masker": "^1.2.0",
-    "vant": "^2.5.8",
+    "vant": "^2.5.9",
     "vue": "^2.6.11",
     "vue-count-to": "^1.0.13",
     "vue-i18n": "^8.15.7",
