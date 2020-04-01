@@ -22,6 +22,7 @@
   import {NavBar, CellGroup, Field, Button} from 'vant'
 
   export default {
+    name: 'account-nickname',
     data() {
       return {
         val: ''

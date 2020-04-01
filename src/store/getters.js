@@ -5,8 +5,8 @@ const getters = {
   // loading
   loading: state => state.app.loading,
 
-  // wechat
-  wechat_ready: state => state.wechat.wechat_ready,
+  // tagsView
+  cachedViews: state => state.tagsView.cachedViews,
 
   // userInfo
   avatar: state => state.user.avatar,
@@ -17,7 +17,7 @@ const getters = {
 
   // shopCart
   items: state => state.cart.items,
-  items_length: state => Array.from(state.cart.items).reduce((prev, curr) => curr.count + prev, 0),
+  items_length: state => Array.from(state.cart.items).reduce((prev, curr) => Number(curr.count) + prev, 0),
 
   // address
   address_list: state => state.address.address_list,

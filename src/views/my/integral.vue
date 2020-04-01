@@ -4,6 +4,7 @@
         :left-text="$route.meta.title"
         left-arrow
         fixed
+        placeholder
         @click-left="onClickLeft"
     />
     <div class="integral-header">
@@ -25,6 +26,7 @@
   import CountTo from 'vue-count-to'
 
   export default {
+    name: 'integral',
     data() {
       return {
         score: 500,
@@ -50,7 +52,6 @@
   @import "~@/assets/less/var.less";
 
   .integral {
-    padding-top: 46px;
 
     .integral-header {
       background-image: url(~@/assets/img/bg.png);

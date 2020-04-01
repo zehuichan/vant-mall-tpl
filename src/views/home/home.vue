@@ -100,6 +100,7 @@
   import {banner, topics, guess} from './mock.js'
 
   export default {
+    name: 'home',
     data() {
       return {
         location: '',
@@ -143,7 +144,7 @@
         this.current_swipe = index
       },
       onClick(url) {
-        this.$router.push(url)
+        this.$navigateTo(url)
       },
     },
     components: {
@@ -167,6 +168,32 @@
 
   .home {
     padding-top: 54px;
+
+    .swipe {
+      height: 210px;
+
+      .indicator {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 80px;
+        height: 4px;
+        border-radius: 1px;
+        overflow: hidden;
+        display: flex;
+
+        .dots {
+          width: 0;
+          background-color: rgba(255, 255, 255, 1);
+          transition: all 0.3s ease-out;
+
+          &.on {
+            width: (100% / 7);
+          }
+        }
+      }
+    }
   }
 
   .banner {
@@ -200,10 +227,9 @@
       .more {
         font-size: @font12;
         color: @text-l;
-
-        text {
-          vertical-align: 1px;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
 
@@ -211,32 +237,6 @@
       margin: 16px 0;
       height: 80px;
       background-color: #e0e0e0;
-    }
-  }
-
-  .swipe {
-    height: 210px;
-
-    .indicator {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background-color: rgba(255, 255, 255, 0.4);
-      width: 80px;
-      height: 4px;
-      border-radius: 1px;
-      overflow: hidden;
-      display: flex;
-
-      .dots {
-        width: 0;
-        background-color: rgba(255, 255, 255, 1);
-        transition: all 0.3s ease-out;
-
-        &.on {
-          width: (100% / 7);
-        }
-      }
     }
   }
 </style>

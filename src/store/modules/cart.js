@@ -24,7 +24,8 @@ const data = [
     'selectedDisabled': 0,
     'groupId': 11,
     'sectionId': 1
-  }, {
+  },
+  {
     'count': 1,
     'selected': 1,
     'joinTime': 1584850811,
@@ -49,7 +50,8 @@ const data = [
     'selectedDisabled': 0,
     'groupId': 11,
     'sectionId': 1
-  }, {
+  },
+  {
     'count': 1,
     'selected': 1,
     'joinTime': 1584850804,
@@ -74,7 +76,8 @@ const data = [
     'selectedDisabled': 0,
     'groupId': 11,
     'sectionId': 1
-  }]
+  }
+]
 
 const state = {
   items: data,
@@ -96,17 +99,17 @@ const actions = {
     })
   },
   // 改变商品数量
-  changeItems({commit, state}, {productId, num}) {
+  changeItems({commit, state}, {productId, count}) {
     return new Promise((resolve, reject) => {
-      const cartItem = state.items.find(item => item.id === productId)
-      cartItem.num = num
+      const cartItem = state.items.find(item => item.productId === productId)
+      cartItem.count = count
       resolve()
     })
   },
   // 删除商品
   deleteItems({commit, state}, productId) {
     return new Promise((resolve, reject) => {
-      const _items = state.items.filter(item => item.id !== productId)
+      const _items = state.items.filter(item => item.productId !== productId)
       commit('SET_CART_ITEMS', _items)
       resolve()
     })

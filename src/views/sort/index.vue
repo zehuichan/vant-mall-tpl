@@ -2,6 +2,8 @@
   <div class="sort">
     <van-nav-bar
         :left-text="$route.meta.title"
+        fixed
+        placeholder
     />
     <div class="vertical-box">
       <!-- 左侧-分组-start -->
@@ -49,12 +51,13 @@
 
 <script>
   // components
-  import {NavBar ,Image} from 'vant'
+  import {NavBar, Image} from 'vant'
 
   // mockData
   import {nav} from './mock.js'
 
   export default {
+    name: 'sort',
     data() {
       return {
         nav: [],

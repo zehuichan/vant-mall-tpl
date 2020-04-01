@@ -19,8 +19,8 @@
               :max="item.inventory"
               async-change
               integer
-              @change="onChange"
-              @overlimit="onOverLimit"
+              @change="(count) => onChange(item.productId, count)"
+              @overlimit="onOverLimit(item.productId, $event)"
           />
         </div>
       </van-card>
@@ -30,7 +30,7 @@
 
 <script>
   // vuex
-  import {mapMutations} from 'vuex'
+  import {mapActions} from 'vuex'
   // components
   import {Checkbox, CheckboxGroup, Card, Image, Stepper} from 'vant'
 
@@ -55,9 +55,9 @@
         checked: this.value
       }
     },
-    watch:{
-      checked(val){
-        console.log(val)
+    watch: {
+      value(val) {
+        this.checked = val
       }
     },
     methods: {
@@ -65,15 +65,15 @@
         this.$emit('input', names)
         this.$emit('change', names)
       },
-      onChange(productId, event) {
-        this['cart/changeItems']({productId: productId, count: event.detail})
+      onChange(productId, count) {
+        this['cart/changeItems']({productId, count})
       },
       onOverLimit(productId, event) {
         const self = this
-        if (event.detail === 'plus') {
+        if (event === 'plus') {
           this.$toast('亲，该宝贝不能购买更多哦~')
         }
-        if (event.detail === 'minus') {
+        if (event === 'minus') {
           this.$dialog
             .confirm({
               message: '确定要删除这个商品吗？'
@@ -85,7 +85,7 @@
             })
         }
       },
-      ...mapMutations(['cart/updateItems', 'cart/changeItems', 'cart/deleteItems'])
+      ...mapActions(['cart/updateItems', 'cart/changeItems', 'cart/deleteItems'])
     },
     components: {
       [Checkbox.name]: Checkbox,

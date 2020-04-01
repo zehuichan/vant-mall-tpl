@@ -60,6 +60,7 @@
   import Split from '@/components/Split'
 
   export default {
+    name: 'account',
     data() {
       return {
         // gender

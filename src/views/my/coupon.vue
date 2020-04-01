@@ -37,6 +37,7 @@
   import LoadMore from '@/components/LoadMore'
 
   export default {
+    name: 'coupon',
     data() {
       return {
         query: '',

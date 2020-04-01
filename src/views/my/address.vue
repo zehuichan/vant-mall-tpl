@@ -39,6 +39,7 @@
   import LoadMore from '@/components/LoadMore'
 
   export default {
+    name: 'address',
     data() {
       return {
         loading: false,

@@ -1,3 +1,5 @@
+// 參考 https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html#%E9%85%8D%E7%BD%AE%E9%A1%B9
+
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -10,11 +12,14 @@ import BlankLayout from '@/layouts/BlankLayout'
 // Home
 import Home from '@/views/home/home'
 import Search from '@/views/home/search'
+// Product
+import ProductList from '@/views/product/list'
+import ProductDetail from '@/views/product/detail'
 
 // Sort
 import Sort from '@/views/sort'
 // Circle
-import Circle from '@/views/circle'
+import MicroCircle from '@/views/micro-circle'
 // Cart
 import Cart from '@/views/cart'
 
@@ -40,7 +45,10 @@ export const routes = [
         path: '',
         component: Home,
         name: 'home',
-        meta: {title: 'vant-mall-tpl'}
+        meta: {
+          title: 'vant-mall-tpl',
+          noCache: true
+        }
       },
     ]
   },
@@ -52,11 +60,31 @@ export const routes = [
         path: 'search',
         component: Search,
         name: 'search',
-        meta: {title: 'vant-mall-tpl'}
+        meta: {
+          title: 'vant-mall-tpl',
+          noCache: true
+        }
       }
     ]
   },
-
+  {
+    path: '/product',
+    component: BlankLayout,
+    children: [
+      {
+        path: 'list',
+        component: ProductList,
+        name: 'product-list',
+        meta: {title: 'vant-mall-tpl'}
+      },
+      {
+        path: 'detail',
+        component: ProductDetail,
+        name: 'product-detail',
+        meta: {title: 'vant-mall-tpl'}
+      },
+    ]
+  },
   {
     path: '/sort',
     component: BasicLayout,
@@ -70,14 +98,14 @@ export const routes = [
     ]
   },
   {
-    path: '/circle',
+    path: '/micro-circle',
     component: BasicLayout,
     children: [
       {
         path: '',
-        component: Circle,
-        name: 'circle',
-        meta: {title: '圈子'}
+        component: MicroCircle,
+        name: 'micro-circle',
+        meta: {title: '微圈'}
       }
     ]
   },
@@ -93,7 +121,6 @@ export const routes = [
       }
     ]
   },
-
   {
     path: '/my',
     component: BasicLayout,
@@ -163,7 +190,7 @@ export const routes = [
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({y: 500}),
+  scrollBehavior: () => ({y: 0}),
   routes: routes
 })
 

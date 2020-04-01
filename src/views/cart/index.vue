@@ -4,9 +4,8 @@
         :left-text="$route.meta.title"
     />
     <div class="page-wrapper">
-      <product-card v-model="checked" :items="items" @click-thumb="onClickThumb"/>
+      <product-card v-model="checked" :items="items" @click-thumb="onClickThumb" @change="onCheckboxGroupChange"/>
     </div>
-    {{checked}}
     <van-submit-bar :price="total" :button-text="`结算(${num})`" @submit="onSubmit">
       <van-checkbox v-model="checkAll" checked-color="#c03131" @click="onCheckboxClick">全选</van-checkbox>
     </van-submit-bar>
@@ -21,6 +20,7 @@
   import ProductCard from '@/components/ProductCard'
 
   export default {
+    name: 'cart',
     data() {
       return {
         checked: [],
@@ -45,11 +45,14 @@
       },
       onSubmit() {
       },
+      onCheckboxGroupChange() {
+        this.checkAll = this.products.length === this.items.length
+      },
       onCheckboxClick() {
         if (this.checkAll) {
           this.checked = []
         } else {
-          this.checked = this.items.map(item => item.productId + '')
+          this.checked = this.items.map(item => item.productId)
         }
         this.$toast(JSON.stringify(this.checked))
       },

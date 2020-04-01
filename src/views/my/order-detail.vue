@@ -58,6 +58,7 @@
   import {detail} from './mock.js'
 
   export default {
+    name: 'order-detail',
     data() {
       return {
         delivery: {},

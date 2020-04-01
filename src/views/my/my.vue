@@ -96,6 +96,7 @@
   import Split from '@/components/Split'
 
   export default {
+    name: 'my',
     data() {
       return {}
     },

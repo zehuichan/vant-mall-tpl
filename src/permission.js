@@ -1,8 +1,16 @@
 import router from './router'
 import store from './store'
+// progress bar
+import NProgress from 'nprogress'
+// progress bar style
+import 'nprogress/nprogress.css'
+// NProgress Configuration
+NProgress.configure({showSpinner: false})
 
 router.beforeEach(async (to, from, next) => {
-  // store.commit('SET_LOADING_STATE', true)
+  // start progress bar
+  NProgress.start()
+
   if (store.getters.mobile) {
     next()
   } else {
@@ -21,7 +29,5 @@ router.beforeEach(async (to, from, next) => {
 })
 
 router.afterEach(() => {
-  // store.commit('SET_LOADING_STATE', false)
-  // 初始化微信config
-  // await store.dispatch('wechat/initWechatState')
+  NProgress.done()
 })

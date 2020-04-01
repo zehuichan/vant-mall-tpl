@@ -34,6 +34,7 @@
   import {Search} from 'vant'
 
   export default {
+    name: 'search',
     data() {
       return {
         kw: '',
@@ -66,7 +67,7 @@
         // 写入内存
         saveToLocal('keywords', this.keywords)
       },
-      _navigateBack(){
+      _navigateBack() {
         this.$router.back()
       },
     },
@@ -85,7 +86,7 @@
 
   .history-header {
     font-size: @font14;
-    padding: 8px 16px;
+    padding: @gutter-8 @gutter-16;
 
     .title {
       font-weight: 600;
@@ -93,14 +94,15 @@
 
     .action {
       .iconfont {
-        font-size: 23px;
+        font-size: @font24;
         line-height: 1;
+        min-width: 1em;
       }
     }
   }
 
   .history-body {
-    padding: 0 @gutter-16;
+    padding: @gutter-8 @gutter-16;
 
     .tag {
       display: inline-block;

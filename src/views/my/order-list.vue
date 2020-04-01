@@ -62,6 +62,7 @@
   import {list} from './mock.js'
 
   export default {
+    name: 'order-list',
     data() {
       return {
         active: this.$route.query.active,
@@ -107,7 +108,7 @@
   @import "~@/assets/less/var.less";
 
   .order-list {
-    .tab-active {
+    .van-tab--active {
       color: #c03131;
     }
   }

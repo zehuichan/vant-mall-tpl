@@ -11,6 +11,7 @@
   import {NavBar} from 'vant'
 
   export default {
+    name: 'micro-circle',
     components: {
       [NavBar.name]: NavBar
     }
