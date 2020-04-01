@@ -1,6 +1,6 @@
 <template>
   <div class="card" :class="shadow ? 'is-' + shadow + '-shadow' : 'is-always-shadow'">
-    <div class="card__header" v-if="$slots.header || header">
+    <div class="card__header van-hairline--bottom" v-if="$slots.header || header">
       <slot name="header">{{ header }}</slot>
     </div>
     <div class="card__body" :style="bodyStyle">

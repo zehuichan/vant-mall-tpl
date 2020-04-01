@@ -12,7 +12,7 @@
         <i slot="icon" class="iconfont icon-all"></i>
         {{$t('navbar.sort')}}
       </van-tabbar-item>
-      <van-tabbar-item name="circle" to="/circle">
+      <van-tabbar-item name="micro-circle" to="/micro-circle">
         <i slot="icon" class="iconfont icon-dongtai"></i>
         {{$t('navbar.circle')}}
       </van-tabbar-item>
