@@ -6,8 +6,9 @@
     <div class="page-wrapper">
       <product-card v-model="checked" :items="items" @click-thumb="onClickThumb" @change="onCheckboxGroupChange"/>
     </div>
-    <van-submit-bar :price="total" :button-text="`结算(${num})`" @submit="onSubmit">
-      <van-checkbox v-model="checkAll" checked-color="#c03131" @click="onCheckboxClick">全选</van-checkbox>
+    <van-submit-bar class="van-hairline--top" :price="total" :button-text="`结算(${num})`" @submit="onSubmit">
+      <van-checkbox v-model="checkAll" :disabled="disabled" checked-color="#c03131" @click="onCheckboxClick">全选
+      </van-checkbox>
     </van-submit-bar>
   </div>
 </template>
@@ -36,6 +37,9 @@
       },
       num() {
         return this.products.reduce((prev, curr) => curr.count + prev, 0)
+      },
+      disabled() {
+        return this.items.length === 0
       },
       ...mapGetters(['items'])
     },

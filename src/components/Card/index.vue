@@ -49,14 +49,6 @@
     &.is-never-shadow {
 
     }
-
-    & + .card {
-      margin-top: 10px;
-    }
-
-    &:last-child {
-      margin-bottom: 10px;
-    }
   }
 
   .card__header {
