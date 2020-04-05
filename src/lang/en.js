@@ -2,7 +2,7 @@ export default {
   navbar: {
     home: 'Home',
     sort: 'Sort',
-    circle: 'Circle',
+    expert: 'Expert',
     cart: 'Cart',
     my: 'My',
   }

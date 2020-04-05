@@ -12,9 +12,9 @@
         <i slot="icon" class="iconfont icon-all"></i>
         {{$t('navbar.sort')}}
       </van-tabbar-item>
-      <van-tabbar-item name="micro-circle" to="/micro-circle">
+      <van-tabbar-item name="expert-expert" to="/expert/expert">
         <i slot="icon" class="iconfont icon-dongtai"></i>
-        {{$t('navbar.circle')}}
+        {{$t('navbar.expert')}}
       </van-tabbar-item>
       <van-tabbar-item name="cart" to="/cart" :badge="items_length">
         <i slot="icon" class="iconfont icon-cart-Empty"></i>

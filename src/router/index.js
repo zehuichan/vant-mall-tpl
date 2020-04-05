@@ -18,8 +18,9 @@ import ProductDetail from '@/views/product/detail'
 
 // Sort
 import Sort from '@/views/sort'
-// Circle
-import MicroCircle from '@/views/micro-circle'
+// Expert
+import Expert from '@/views/expert/expert'
+import ExpertDetail from '@/views/expert/detail'
 // Cart
 import Cart from '@/views/cart'
 
@@ -98,15 +99,28 @@ export const routes = [
     ]
   },
   {
-    path: '/micro-circle',
+    path: '/expert',
     component: BasicLayout,
     children: [
       {
-        path: '',
-        component: MicroCircle,
-        name: 'micro-circle',
-        meta: {title: '微圈'}
-      }
+        path: 'expert',
+        component: Expert,
+        name: 'expert-expert',
+        meta: {title: '名家'}
+      },
+
+    ]
+  },
+  {
+    path: '/expert',
+    component: BlankLayout,
+    children: [
+      {
+        path: 'expert-detail',
+        component: ExpertDetail,
+        name: 'expert-detail',
+        meta: {title: '名家'}
+      },
     ]
   },
   {

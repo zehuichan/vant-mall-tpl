@@ -39,7 +39,7 @@
     <split/>
     <div class="introduce">
       <div class="title">
-        <view class="inner-text">商品详情</view>
+        <div class="inner-text">商品详情</div>
       </div>
       <div class="rich-text" v-html="content"></div>
     </div>
@@ -61,7 +61,7 @@
   import Split from '@/components/Split'
 
   const SUCCESS_CONTENT =
-    '<p><img style="width: 750px; height: 930px;" src="https://mall.s.maizuo.com/78f631d4ecf38ac5ef489a3b706b12b1.jpg"><img style="width: 750px; height: 921px;" src="https://mall.s.maizuo.com/91f344c1751f39652d0821639cf46ae2.jpg"><img style="width: 750px; height: 1204px;" src="https://mall.s.maizuo.com/0d5863399be4a917f075d8bd1f4757a9.jpg"><img style="width: 750px; height: 640px;" src="https://mall.s.maizuo.com/177486c3ac18653416b34d59f36a2227.jpg"><img style="width: 750px; height: 374px;" src="https://mall.s.maizuo.com/280fb9d654dddccc151f14fad31eb4ed.jpg"><img style="width: 750px; height: 691px;" src="https://mall.s.maizuo.com/6359556d2e2f7faf98c0bd1ba230b5b1.jpg"><img style="width: 750px; height: 279px;" src="https://mall.s.maizuo.com/780c2985856ab733aff5d4caea633eb4.jpg"><img style="width: 750px; height: 891px;" src="https://mall.s.maizuo.com/89733dce281a0d51bb74d9cd10a47718.jpg"><img style="width: 750px; height: 773px;" src="https://mall.s.maizuo.com/30989ae5ab0fd41f8b16329d638be634.jpg"><img style="width: 750px; height: 353px;" src="https://mall.s.maizuo.com/8d5569a33005f97fcb4b28c049008e3f.jpg"><img style="width: 750px; height: 1050px;" src="https://mall.s.maizuo.com/51b3566653772b361d7033aa6cf42b63.jpg"><img style="width: 750px; height: 923px;" src="https://mall.s.maizuo.com/d588a33a489bcaee263cdff3faa07924.jpg"><img style="width: 750px; height: 1003px;" src="https://mall.s.maizuo.com/7b78be00e034f95051cd399670a5c549.jpg"><img style="width: 750px; height: 1130px;" src="https://mall.s.maizuo.com/aec3ae9162886e9676e83f16c69fff7c.jpg"><img style="width: 750px; height: 1066px;" src="https://mall.s.maizuo.com/ac19396593fd4d826b3cc7b738de3dee.jpg"><img style="width: 750px; height: 964px;" src="https://mall.s.maizuo.com/48ea077baa258838ddb22add1358198d.jpg"><img style="width: 750px; height: 227px;" src="https://mall.s.maizuo.com/7d3c8de581dd2878c64156461cdfd727.jpg"><br></p>'
+    '<div><img style="width: 750px; height: 930px;" src="https://mall.s.maizuo.com/78f631d4ecf38ac5ef489a3b706b12b1.jpg" alt=""><img style="width: 750px; height: 921px;" src="https://mall.s.maizuo.com/91f344c1751f39652d0821639cf46ae2.jpg" alt=""><img style="width: 750px; height: 1204px;" src="https://mall.s.maizuo.com/0d5863399be4a917f075d8bd1f4757a9.jpg"><img style="width: 750px; height: 640px;" src="https://mall.s.maizuo.com/177486c3ac18653416b34d59f36a2227.jpg"><img style="width: 750px; height: 374px;" src="https://mall.s.maizuo.com/280fb9d654dddccc151f14fad31eb4ed.jpg"><img style="width: 750px; height: 691px;" src="https://mall.s.maizuo.com/6359556d2e2f7faf98c0bd1ba230b5b1.jpg"><img style="width: 750px; height: 279px;" src="https://mall.s.maizuo.com/780c2985856ab733aff5d4caea633eb4.jpg"><img style="width: 750px; height: 891px;" src="https://mall.s.maizuo.com/89733dce281a0d51bb74d9cd10a47718.jpg"><img style="width: 750px; height: 773px;" src="https://mall.s.maizuo.com/30989ae5ab0fd41f8b16329d638be634.jpg"><img style="width: 750px; height: 353px;" src="https://mall.s.maizuo.com/8d5569a33005f97fcb4b28c049008e3f.jpg"><img style="width: 750px; height: 1050px;" src="https://mall.s.maizuo.com/51b3566653772b361d7033aa6cf42b63.jpg"><img style="width: 750px; height: 923px;" src="https://mall.s.maizuo.com/d588a33a489bcaee263cdff3faa07924.jpg"><img style="width: 750px; height: 1003px;" src="https://mall.s.maizuo.com/7b78be00e034f95051cd399670a5c549.jpg"><img style="width: 750px; height: 1130px;" src="https://mall.s.maizuo.com/aec3ae9162886e9676e83f16c69fff7c.jpg" alt=""><img style="width: 750px; height: 1066px;" src="https://mall.s.maizuo.com/ac19396593fd4d826b3cc7b738de3dee.jpg" alt=""><img style="width: 750px; height: 964px;" src="https://mall.s.maizuo.com/48ea077baa258838ddb22add1358198d.jpg" alt=""><img style="width: 750px; height: 227px;" src="https://mall.s.maizuo.com/7d3c8de581dd2878c64156461cdfd727.jpg" alt=""><br></div>'
 
   export default {
     name: 'product-detail',
@@ -220,67 +220,67 @@
         }
       }
     }
-  }
 
-  .attrs {
-    background-color: #fff;
-    font-size: @font12;
-    color: @text-l;
+    .attrs {
+      background-color: #fff;
+      font-size: @font12;
+      color: @text-l;
 
-    .attrs-item {
-      display: inline-block;
-      line-height: 24px;
-      padding: 10px 0 10px 15px;
+      .attrs-item {
+        display: inline-block;
+        line-height: 24px;
+        padding: 10px 0 10px 15px;
 
-      .iconfont {
-        font-size: @font20;
-        color: @primary;
-        line-height: 1;
-        vertical-align: -3px;
-        margin-right: 3px;
+        .iconfont {
+          font-size: @font20;
+          color: @primary;
+          line-height: 1;
+          vertical-align: -3px;
+          margin-right: 3px;
+        }
       }
     }
-  }
 
-  .introduce {
-    background-color: #fff;
+    .introduce {
+      background-color: #fff;
 
-    .title {
-      font-size: @font13;
-      text-align: center;
-      padding: 22px 0;
-
-      .inner-text {
-        position: relative;
+      .title {
+        font-size: @font13;
         text-align: center;
-        font-weight: 400;
-        color: @text-l;
+        padding: 22px 0;
 
-        &:before {
-          left: 35.5%;
-        }
+        .inner-text {
+          position: relative;
+          text-align: center;
+          font-weight: 400;
+          color: @text-l;
 
-        &:after {
-          right: 35.5%;
-        }
+          &:before {
+            left: 35.5%;
+          }
 
-        &:before,
-        &:after {
-          content: '';
-          position: absolute;
-          top: 52%;
-          background-color: #ededed;
-          width: 18px;
-          height: 1px;
+          &:after {
+            right: 35.5%;
+          }
+
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            top: 52%;
+            background-color: #ededed;
+            width: 18px;
+            height: 1px;
+          }
         }
       }
-    }
 
-    .rich-text {
-      img {
-        display: block;
-        width: 100% !important;
-        height: 100% !important;
+      .rich-text {
+        img {
+          display: block;
+          width: 100% !important;
+          height: 100% !important;
+        }
       }
     }
   }
