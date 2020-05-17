@@ -1,24 +1,23 @@
 <template>
   <div class="popup-picker van-cell">
     <van-field
-      v-bind="$props"
-      :value="text"
-      :right-icon="showIcon"
-      readonly
-      clickable
-      @click.stop="onClick"
-      @click-right-icon.stop="onClear">
+        v-bind="$props"
+        :value="text"
+        :right-icon="showIcon"
+        readonly
+        clickable
+        @click-input="onClick"
+        @click-right-icon="onClear">
+      <van-popup v-model="show" slot="extra" position="bottom" get-container="body">
+        <van-picker
+            ref="picker"
+            show-toolbar
+            :columns="columns"
+            @cancel="onCancel"
+            @confirm="onConfirm">
+        </van-picker>
+      </van-popup>
     </van-field>
-
-    <van-popup v-model="show" position="bottom" get-container="body">
-      <van-picker
-        ref="picker"
-        show-toolbar
-        :columns="columns"
-        @cancel="onCancel"
-        @confirm="onConfirm">
-      </van-picker>
-    </van-popup>
   </div>
 </template>
 

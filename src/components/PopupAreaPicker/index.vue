@@ -1,24 +1,23 @@
 <template>
   <div class="popup-area-picker van-cell">
     <van-field
-      v-bind="$props"
-      :value="text"
-      :right-icon="showIcon"
-      readonly
-      clickable
-      @click.stop="onClick"
-      @click-right-icon.stop="onClear"
-    />
-
-    <van-popup v-model="show" position="bottom" get-container="body">
-      <van-area
-        ref="area"
-        :area-list="area"
-        :columns-placeholder="['请选择', '请选择', '请选择']"
-        @cancel="onCancel"
-        @confirm="onConfirm"
-      />
-    </van-popup>
+        v-bind="$props"
+        :value="text"
+        :right-icon="showIcon"
+        readonly
+        clickable
+        @click-input="onClick"
+        @click-right-icon="onClear">
+      <van-popup v-model="show" slot="extra" position="bottom" get-container="body">
+        <van-area
+            ref="area"
+            :area-list="area"
+            :columns-placeholder="['请选择', '请选择', '请选择']"
+            @cancel="onCancel"
+            @confirm="onConfirm">
+        </van-area>
+      </van-popup>
+    </van-field>
   </div>
 </template>
 

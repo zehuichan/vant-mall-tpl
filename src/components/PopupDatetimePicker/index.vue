@@ -1,23 +1,23 @@
 <template>
   <div class="popup-datetimePicker van-cell">
     <van-field
-      v-bind="$props"
-      :value="value"
-      :right-icon="showIcon"
-      readonly
-      clickable
-      @click.stop="onClick"
-      @click-right-icon.stop="onClear"
-    />
-
-    <van-popup v-model="show" position="bottom" get-container="body">
-      <van-datetime-picker
-        type="date"
-        v-model="date"
-        @confirm="onConfirm"
-        @cancel="onCancel"
-      />
-    </van-popup>
+        v-bind="$props"
+        :value="value"
+        :right-icon="showIcon"
+        readonly
+        clickable
+        @click-input="onClick"
+        @click-right-icon="onClear"
+    >
+      <van-popup v-model="show" slot="extra" position="bottom" get-container="body">
+        <van-datetime-picker
+            type="date"
+            v-model="date"
+            @confirm="onConfirm"
+            @cancel="onCancel"
+        />
+      </van-popup>
+    </van-field>
   </div>
 </template>
 

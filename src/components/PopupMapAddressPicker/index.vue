@@ -1,6 +1,6 @@
 <template>
   <div class="popup-map-address-picker van-cell">
-    <van-cell is-link @click.stop="onClick">
+    <van-cell is-link @click="onClick">
       <div slot="title">收货地址</div>
       <div v-if="Object.keys(value).length > 0">
         <div class="tit">{{value && value.name}}</div>
@@ -9,42 +9,42 @@
         <i class="van-icon van-icon-location-o"></i>
         点击选择
       </div>
-    </van-cell>
-
-    <van-popup
-      v-model="show"
-      position="right"
-      get-container="body"
-      style="width: 100%;height: 100%;background: #f0f2f5;"
-    >
-      <div class="popup-map-address-picker__header">
-        <van-nav-bar
-          left-text="选择收货地址"
-          left-arrow
-          @click-left="show = false"
-        />
-        <van-search
-          v-model="keyword"
-          placeholder="请输入搜索关键词"
-          :label="city.city || '加载中'"
-          @clear="handleClear"
-        />
-        <div class="cell-group-title">搜索结果</div>
-      </div>
-      <div class="AMap-box__content">
-        <van-cell-group>
-          <van-cell
-            v-for="item in result"
-            :key="item.id"
-            clickable
-            :title="item.name"
-            :label="`${item.district} ${item.address}`"
-            @click="handleClick(item)"
+      <van-popup
+          v-model="show"
+          slot="extra"
+          position="right"
+          get-container="body"
+          style="width: 100%;height: 100%;background: #f0f2f5;"
+      >
+        <div class="popup-map-address-picker__header">
+          <van-nav-bar
+              left-text="选择收货地址"
+              left-arrow
+              @click-left="show = false"
           />
-        </van-cell-group>
-        <empty/>
-      </div>
-    </van-popup>
+          <van-search
+              v-model="keyword"
+              placeholder="请输入搜索关键词"
+              :label="city.city || '加载中'"
+              @clear="handleClear"
+          />
+          <div class="cell-group-title">搜索结果</div>
+        </div>
+        <div class="AMap-box__content">
+          <van-cell-group>
+            <van-cell
+                v-for="item in result"
+                :key="item.id"
+                clickable
+                :title="item.name"
+                :label="`${item.district} ${item.address}`"
+                @click="handleClick(item)"
+            />
+          </van-cell-group>
+          <empty/>
+        </div>
+      </van-popup>
+    </van-cell>
   </div>
 </template>
 

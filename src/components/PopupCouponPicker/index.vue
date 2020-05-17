@@ -1,42 +1,41 @@
 <template>
   <div class="popup-coupon-picker van-cell">
     <van-field
-      v-bind="$props"
-      :value="$options.filters.format(text, 2, '- ￥') || ''"
-      readonly
-      clickable
-      @click.stop="onClick">
+        v-bind="$props"
+        :value="$options.filters.format(text, 2, '- ￥') || ''"
+        readonly
+        clickable
+        @click-input="onClick">
+      <van-popup
+          class="popup-coupon bg-color"
+          v-model="show"
+          closeable
+          close-icon="close"
+          slot="extra"
+          position="bottom"
+          get-container="body"
+          @closed="handleClose"
+      >
+        <van-nav-bar title="选择优惠券"/>
+        <div class="page-container padded">
+          <coupon-list
+              v-model="checks"
+              :source="source"
+              show-checkbox
+          />
+        </div>
+        <div class="btn-wrapper fixed-bottom padded">
+          <van-row>
+            <van-col span="12">
+              <van-button type="default" block @click="handleConfirm('empty')">不使用优惠券</van-button>
+            </van-col>
+            <van-col span="12">
+              <van-button type="primary" block @click="handleConfirm('checks')">确认</van-button>
+            </van-col>
+          </van-row>
+        </div>
+      </van-popup>
     </van-field>
-
-    <van-popup
-      class="popup-coupon bg-color"
-      v-model="show"
-      closeable
-      close-icon="close"
-      position="bottom"
-      get-container="body"
-      @closed="handleClose"
-    >
-      <van-nav-bar title="选择优惠券"/>
-      <div class="page-container padded">
-        <coupon-list
-          v-model="checks"
-          :source="source"
-          show-checkbox
-        />
-      </div>
-      <div class="btn-wrapper fixed-bottom padded">
-        <van-row>
-          <van-col span="12">
-            <van-button type="default" block @click="handleConfirm('empty')">不使用优惠券</van-button>
-          </van-col>
-          <van-col span="12">
-            <van-button type="primary" block @click="handleConfirm('checks')">确认</van-button>
-          </van-col>
-        </van-row>
-      </div>
-    </van-popup>
-
   </div>
 </template>
 
