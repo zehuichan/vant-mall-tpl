@@ -18,7 +18,7 @@
     <split/>
     <van-cell-group>
       <van-cell title="手机号码" :value="mobile" is-link/>
-      <van-cell title="支付密码" value="未设置" is-link/>
+      <van-cell title="支付密码" value="未设置" is-link @click="onClick('../my/account-security')"/>
     </van-cell-group>
     <div class="btn-wrapper fixed-bottom padded">
       <van-button type="danger" block>退出登录</van-button>

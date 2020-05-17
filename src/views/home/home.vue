@@ -1,11 +1,14 @@
 <template>
   <div class="home">
     <div class="search-bar fixed">
+      <div class="search-icon tap-active">
+        <i class="iconfont icon-scanning"/>
+      </div>
       <div class="search-field search-field__value">
         <van-search :label="city" placeholder="搜索" readonly @click.native="onClick('/home/search')"/>
       </div>
       <div class="search-icon tap-active">
-        <i class="iconfont icon-scanning"></i>
+        <i class="iconfont icon-comments"/>
       </div>
     </div>
 

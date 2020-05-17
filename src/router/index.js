@@ -28,6 +28,7 @@ import Cart from '@/views/cart'
 import My from '@/views/my/my'
 import Account from '@/views/my/account'
 import AccountNickname from '@/views/my/account-nickname'
+import AccountSecurity from '@/views/my/account-security'
 import OrderList from '@/views/my/order-list'
 import OrderDetail from '@/views/my/order-detail'
 import Integral from '@/views/my/integral'
@@ -192,6 +193,12 @@ export const routes = [
         component: Address,
         name: 'address',
         meta: {title: '地址管理'}
+      },
+      {
+        path: 'account-security',
+        component: AccountSecurity,
+        name: 'account-security',
+        meta: {title: '支付密码'}
       },
     ]
   },

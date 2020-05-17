@@ -1,4 +1,7 @@
-import 'babel-polyfill'
+// with polyfills
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import Vue from 'vue'
 
 import '@/assets/less/index.less'
