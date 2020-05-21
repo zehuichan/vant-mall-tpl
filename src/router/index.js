@@ -1,5 +1,3 @@
-// 參考 https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html#%E9%85%8D%E7%BD%AE%E9%A1%B9
-
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -35,170 +33,185 @@ import Integral from '@/views/my/integral'
 import Coupon from '@/views/my/coupon'
 import Address from '@/views/my/address'
 
-Vue.use(Router)
+const RouteView = {
+  name: 'RouteView',
+  render: (h) => h('router-view')
+}
 
 export const routes = [
-  {path: '/', redirect: 'home'},
   {
-    path: '/home',
-    component: BasicLayout,
+    path: '/',
+    component: RouteView,
+    redirect: '/home/index',
     children: [
+
+      // home
       {
-        path: '',
-        component: Home,
-        name: 'home',
-        meta: {
-          title: 'vant-mall-tpl',
-          noCache: true
-        }
-      },
-    ]
-  },
-  {
-    path: '/home',
-    component: BlankLayout,
-    children: [
-      {
-        path: 'search',
-        component: Search,
-        name: 'search',
-        meta: {
-          title: 'vant-mall-tpl',
-          noCache: true
-        }
-      }
-    ]
-  },
-  {
-    path: '/product',
-    component: BlankLayout,
-    children: [
-      {
-        path: 'list',
-        component: ProductList,
-        name: 'product-list',
-        meta: {title: 'vant-mall-tpl'}
+        path: '/home',
+        component: BasicLayout,
+        children: [
+          {
+            path: '/home/index',
+            name: 'home',
+            component: Home,
+            meta: {title: 'vant-mall-tpl', noCache: true}
+          },
+        ]
       },
       {
-        path: 'detail',
-        component: ProductDetail,
-        name: 'product-detail',
-        meta: {title: 'vant-mall-tpl'}
-      },
-    ]
-  },
-  {
-    path: '/sort',
-    component: BasicLayout,
-    children: [
-      {
-        path: '',
-        component: Sort,
-        name: 'sort',
-        meta: {title: '分类'}
-      }
-    ]
-  },
-  {
-    path: '/expert',
-    component: BasicLayout,
-    children: [
-      {
-        path: 'expert',
-        component: Expert,
-        name: 'expert-expert',
-        meta: {title: '名家'}
+        path: '/home',
+        component: BlankLayout,
+        children: [
+          {
+            path: '/home/search',
+            name: 'search',
+            component: Search,
+            meta: {title: 'vant-mall-tpl', noCache: true}
+          },
+        ]
       },
 
-    ]
-  },
-  {
-    path: '/expert',
-    component: BlankLayout,
-    children: [
+      // product
       {
-        path: 'expert-detail',
-        component: ExpertDetail,
-        name: 'expert-detail',
-        meta: {title: '名家'}
+        path: '/product',
+        component: BlankLayout,
+        children: [
+          {
+            path: '/product/list',
+            name: 'product-list',
+            component: ProductList,
+            meta: {title: 'vant-mall-tpl', noCache: true}
+          },
+          {
+            path: '/product/detail',
+            name: 'product-detail',
+            component: ProductDetail,
+            meta: {title: 'vant-mall-tpl', noCache: true}
+          },
+        ]
       },
-    ]
-  },
-  {
-    path: '/cart',
-    component: BasicLayout,
-    children: [
+
+
+      // sort
       {
-        path: '',
-        component: Cart,
-        name: 'cart',
-        meta: {title: '购物车'}
-      }
-    ]
-  },
-  {
-    path: '/my',
-    component: BasicLayout,
-    children: [
-      {
-        path: 'my',
-        component: My,
-        name: 'my',
-        meta: {title: 'vant-mall-tpl'}
-      }
-    ]
-  },
-  {
-    path: '/my',
-    component: BlankLayout,
-    children: [
-      {
-        path: 'account',
-        component: Account,
-        name: 'account',
-        meta: {title: '我的资料'}
+        path: '/sort',
+        component: BasicLayout,
+        children: [
+          {
+            path: '/sort/index',
+            name: 'sort',
+            component: Sort,
+            meta: {title: '分类', noCache: true}
+          },
+        ]
       },
+
+      // expert
       {
-        path: 'account-nickname',
-        component: AccountNickname,
-        name: 'account-nickname',
-        meta: {title: '更改昵称'}
+        path: '/expert',
+        component: BasicLayout,
+        children: [
+          {
+            path: '/expert/index',
+            name: 'expert-expert',
+            component: Expert,
+            meta: {title: '名家', noCache: true}
+          },
+        ]
       },
       {
-        path: 'order-list',
-        component: OrderList,
-        name: 'order-list',
-        meta: {title: '我的订单'}
+        path: '/expert',
+        component: BlankLayout,
+        children: [
+          {
+            path: '/expert/detail',
+            name: 'expert-detail',
+            component: ExpertDetail,
+            meta: {title: '名家', noCache: true}
+          },
+        ]
+      },
+
+      // cart
+      {
+        path: '/cart',
+        component: BasicLayout,
+        children: [
+          {
+            path: '/cart/index',
+            name: 'cart',
+            component: Cart,
+            meta: {title: '购物车', noCache: true}
+          },
+        ]
+      },
+
+      // my
+      {
+        path: '/my',
+        component: BasicLayout,
+        children: [
+          {
+            path: '/my/index',
+            name: 'my',
+            component: My,
+            meta: {title: 'vant-mall-tpl', noCache: true}
+          },
+        ]
       },
       {
-        path: 'order-detail',
-        component: OrderDetail,
-        name: 'order-detail',
-        meta: {title: '我的详情'}
-      },
-      {
-        path: 'integral',
-        component: Integral,
-        name: 'integral',
-        meta: {title: '我的积分'}
-      },
-      {
-        path: 'coupon',
-        component: Coupon,
-        name: 'coupon',
-        meta: {title: '卡券管理'}
-      },
-      {
-        path: 'address',
-        component: Address,
-        name: 'address',
-        meta: {title: '地址管理'}
-      },
-      {
-        path: 'account-security',
-        component: AccountSecurity,
-        name: 'account-security',
-        meta: {title: '支付密码'}
+        path: '/my',
+        component: BlankLayout,
+        children: [
+          {
+            path: '/my/account',
+            name: 'account',
+            component: Account,
+            meta: {title: '我的资料', noCache: true}
+          },
+          {
+            path: '/my/account-nickname',
+            name: 'account-nickname',
+            component: AccountNickname,
+            meta: {title: '更改昵称', noCache: true}
+          },
+          {
+            path: '/my/account-security',
+            name: 'account-security',
+            component: AccountSecurity,
+            meta: {title: '支付密码', noCache: true}
+          },
+          {
+            path: '/my/order-list',
+            name: 'order-list',
+            component: OrderList,
+            meta: {title: '我的订单', noCache: true}
+          },
+          {
+            path: '/my/order-detail',
+            name: 'order-detail',
+            component: OrderDetail,
+            meta: {title: '订单详情', noCache: true}
+          },
+          {
+            path: '/my/integral',
+            name: 'integral',
+            component: Integral,
+            meta: {title: '我的积分', noCache: true}
+          },
+          {
+            path: '/my/coupon',
+            name: 'coupon',
+            component: Coupon,
+            meta: {title: '卡券管理', noCache: true}
+          },
+          {
+            path: '/my/address',
+            name: 'address',
+            component: Address,
+            meta: {title: '地址管理', noCache: true}
+          },
+        ]
       },
     ]
   },
@@ -208,6 +221,8 @@ export const routes = [
   {path: '/500', component: () => import('@/views/errorPage/500')},
   {path: '*', redirect: '/404'}
 ]
+
+Vue.use(Router)
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support

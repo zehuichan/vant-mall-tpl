@@ -4,23 +4,23 @@
     <app-main has-padding/>
     <!--tabbar-->
     <van-tabbar v-model="active" active-color="#c03131" inactive-color="#2e2f30">
-      <van-tabbar-item name="home" to="/home">
+      <van-tabbar-item name="home" to="/home/index">
         <i slot="icon" class="iconfont icon-feed-logo"></i>
         {{$t('navbar.home')}}
       </van-tabbar-item>
-      <van-tabbar-item name="sort" to="/sort">
+      <van-tabbar-item name="sort" to="/sort/index">
         <i slot="icon" class="iconfont icon-all"></i>
         {{$t('navbar.sort')}}
       </van-tabbar-item>
-      <van-tabbar-item name="expert-expert" to="/expert/expert">
+      <van-tabbar-item name="expert-expert" to="/expert/index">
         <i slot="icon" class="iconfont icon-dongtai"></i>
         {{$t('navbar.expert')}}
       </van-tabbar-item>
-      <van-tabbar-item name="cart" to="/cart" :badge="items_length">
+      <van-tabbar-item name="cart" to="/cart/index" :badge="items_length">
         <i slot="icon" class="iconfont icon-cart-Empty"></i>
         {{$t('navbar.cart')}}
       </van-tabbar-item>
-      <van-tabbar-item name="my" to="/my/my">
+      <van-tabbar-item name="my" to="/my/index">
         <i slot="icon" class="iconfont icon-bussiness-man"></i>
         {{$t('navbar.my')}}
       </van-tabbar-item>

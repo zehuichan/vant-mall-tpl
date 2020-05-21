@@ -13,7 +13,7 @@
           :desc="item.desc"
           :status="item.status"
 
-          @click.native="onClick('/expert/expert-detail')"
+          @click.native="onClick('/expert/detail')"
       />
     </div>
   </div>

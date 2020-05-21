@@ -1,9 +1,9 @@
 <template>
   <div class="app-main" :class="classes">
     <transition name="fade" mode="out-in">
-      <!--      <keep-alive :include="cachedViews">-->
-      <router-view :key="key"/>
-      <!--      </keep-alive>-->
+      <keep-alive :include="cachedViews">
+        <router-view :key="key"/>
+      </keep-alive>
     </transition>
   </div>
 </template>
@@ -22,7 +22,13 @@
         return this.hasPadding ? 'has-padding' : ''
       },
       cachedViews() {
-        return []
+        return [
+          'home',
+          'sort',
+          'expert',
+          'cart',
+          'my',
+        ]
       },
       key() {
         return this.$route.path

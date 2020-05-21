@@ -7,7 +7,8 @@
       <product-card v-model="checked" :items="items" @click-thumb="onClickThumb" @change="onCheckboxGroupChange"/>
     </div>
     <van-submit-bar class="van-hairline--top" :price="total" :button-text="`结算(${num})`" @submit="onSubmit">
-      <van-checkbox v-model="checkAll" :disabled="disabled" checked-color="#c03131" @click="onCheckboxClick">全选
+      <van-checkbox v-model="checkAll" :disabled="disabled" checked-color="#c03131" @click="onCheckboxClick">
+        全选
       </van-checkbox>
     </van-submit-bar>
   </div>
@@ -53,6 +54,7 @@
         this.checkAll = this.products.length === this.items.length
       },
       onCheckboxClick() {
+        this.checkAll = !this.checkAll
         if (this.checkAll) {
           this.checked = []
         } else {
