@@ -1,3 +1,6 @@
+// require('login/index').default   // 同步的方式
+// () => import('login/index')      // 异步的方式
+
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -10,15 +13,18 @@ import BlankLayout from '@/layouts/BlankLayout'
 // Home
 import Home from '@/views/home/home'
 import Search from '@/views/home/search'
+
 // Product
 import ProductList from '@/views/product/list'
 import ProductDetail from '@/views/product/detail'
 
 // Sort
 import Sort from '@/views/sort'
+
 // Expert
 import Expert from '@/views/expert/expert'
 import ExpertDetail from '@/views/expert/detail'
+
 // Cart
 import Cart from '@/views/cart'
 

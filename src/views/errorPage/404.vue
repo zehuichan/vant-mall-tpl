@@ -1,9 +1,11 @@
 <template>
   <div class="error-page">
-    <div class="title">404</div>
-    <div class="info">抱歉，你访问的页面不存在</div>
-    <div class="button-wrapper">
-      <van-button type="info" size="mini" to="/">返回首页</van-button>
+    <div class="inner">
+      <div class="title">404</div>
+      <div class="info">抱歉，你访问的页面不存在</div>
+      <div class="button-wrapper">
+        <van-button type="info" size="small" to="/">返回首页</van-button>
+      </div>
     </div>
   </div>
 </template>

@@ -37,12 +37,15 @@
 
   export default {
     name: 'basic-layout',
-    data() {
-      return {
-        active: this.$route.name
-      }
-    },
     computed: {
+      active: {
+        get() {
+          return this.$route.name
+        },
+        set(val) {
+
+        }
+      },
       ...mapGetters([
         'items_length'
       ])

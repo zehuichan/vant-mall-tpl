@@ -5,9 +5,6 @@ const getters = {
   // loading
   loading: state => state.app.loading,
 
-  // tagsView
-  cachedViews: state => state.tagsView.cachedViews,
-
   // userInfo
   avatar: state => state.user.avatar,
   mobile: state => state.user.mobile,
