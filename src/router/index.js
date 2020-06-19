@@ -38,6 +38,7 @@ import OrderDetail from '@/views/my/order-detail'
 import Integral from '@/views/my/integral'
 import Coupon from '@/views/my/coupon'
 import Address from '@/views/my/address'
+import Assistant from '@/views/my/assistant'
 
 const RouteView = {
   name: 'RouteView',
@@ -216,6 +217,12 @@ export const routes = [
             name: 'address',
             component: Address,
             meta: {title: '地址管理', noCache: true}
+          },
+          {
+            path: '/my/assistant',
+            name: 'assistant',
+            component: Assistant,
+            meta: {title: '劳动关系助手', noCache: true}
           },
         ]
       },
