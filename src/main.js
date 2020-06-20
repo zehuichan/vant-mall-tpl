@@ -28,10 +28,6 @@ if ('addEventListener' in document && 'ontouchstart' in window) {
 
 import {Toast, Dialog, Lazyload} from 'vant'
 
-Toast.setDefaultOptions({
-  duration: 1500
-})
-
 Vue.use(Toast)
 Vue.use(Dialog)
 Vue.use(Lazyload)
@@ -39,9 +35,9 @@ Vue.use(Lazyload)
 import './permission'
 
 // 微信jssdk
-import WechatPlugin from '@/plugins/wechat/index'
+import WechatPlugin from '@/plugins/wechat'
 // 高德地图API
-import AmapPlugin from '@/plugins/amap/index'
+import AmapPlugin from '@/plugins/amap'
 
 Vue.use(WechatPlugin)
 Vue.use(AmapPlugin)
