@@ -11,34 +11,34 @@ import BlankLayout from '@/layouts/BlankLayout'
 // view components
 
 // Home
-import Home from '@/views/home/home'
-import Search from '@/views/home/search'
+const Home = () => import('@/views/home/home')
+const Search = () => import('@/views/home/search')
 
 // Product
-import ProductList from '@/views/product/list'
-import ProductDetail from '@/views/product/detail'
+const ProductList = () => import('@/views/product/list')
+const ProductDetail = () => import('@/views/product/detail')
 
 // Sort
-import Sort from '@/views/sort'
+const Sort = () => import('@/views/sort')
 
 // Expert
-import Expert from '@/views/expert/expert'
-import ExpertDetail from '@/views/expert/detail'
+const Expert = () => import('@/views/expert/expert')
+const ExpertDetail = () => import('@/views/expert/detail')
 
 // Cart
-import Cart from '@/views/cart'
+const Cart = () => import('@/views/cart')
 
 // My
-import My from '@/views/my/my'
-import Account from '@/views/my/account'
-import AccountNickname from '@/views/my/account-nickname'
-import AccountSecurity from '@/views/my/account-security'
-import OrderList from '@/views/my/order-list'
-import OrderDetail from '@/views/my/order-detail'
-import Integral from '@/views/my/integral'
-import Coupon from '@/views/my/coupon'
-import Address from '@/views/my/address'
-import Assistant from '@/views/my/assistant'
+const My = () => import('@/views/my/my')
+const Account = () => import('@/views/my/account')
+const AccountNickname = () => import('@/views/my/account-nickname')
+const AccountSecurity = () => import('@/views/my/account-security')
+const OrderList = () => import('@/views/my/order-list')
+const OrderDetail = () => import('@/views/my/order-detail')
+const Integral = () => import('@/views/my/integral')
+const Coupon = () => import('@/views/my/coupon')
+const Address = () => import('@/views/my/address')
+const Assistant = () => import('@/views/my/assistant')
 
 const RouteView = {
   name: 'RouteView',
