@@ -1,7 +1,7 @@
 <template>
   <div class="my">
     <div class="my-header">
-      <div class="avatar" @click="onClick('../my/account')">
+      <div class="avatar" @click="onClick('/my/account')">
         <van-image width="100%" height="100%" :src="avatar"/>
       </div>
       <div class="nick-name">{{mobile | formatPhone}}</div>
