@@ -1,10 +1,10 @@
-import amap from './amap'
+import wx from './jweixin-1.6.0'
 
 function plugin(Vue) {
   if (plugin.installed) {
     return
   }
-  Vue.prototype.$amap = amap
+  Vue.prototype.$wx = wx
 }
 
 export default plugin

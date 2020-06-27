@@ -45,6 +45,13 @@ module.exports = {
     overlay: process.env.VUE_APP_ERROR_OVERLAY ? {warnings: false, errors: true} : false,
     // proxy: process.env.VUE_APP_BASE_API,
   },
+  css: {
+    loaderOptions: {
+      less: {
+        prependData: `@import "~@/assets/less/var.less";`
+      }
+    }
+  },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.

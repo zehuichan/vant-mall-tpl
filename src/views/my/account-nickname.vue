@@ -70,8 +70,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" rel="stylesheet/less" type="text/less">
-  @import "~@/assets/less/var.less";
-
   .account-nickname {
     .desc {
       font-size: @font12;

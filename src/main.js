@@ -35,11 +35,11 @@ Vue.use(Lazyload)
 import './permission'
 
 // 微信jssdk
-import WechatPlugin from '@/plugins/wechat'
+import JWeixinPlugin from '@/plugins/jweixin'
 // 高德地图API
 import AmapPlugin from '@/plugins/amap'
 
-Vue.use(WechatPlugin)
+Vue.use(JWeixinPlugin)
 Vue.use(AmapPlugin)
 
 import * as filters from './filters'
