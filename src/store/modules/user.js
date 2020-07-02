@@ -12,23 +12,23 @@ const state = {
 }
 
 const mutations = {
-  SET_AVATAR(state, avatar) {
+  SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
     saveToLocal('avatar', avatar)
   },
-  SET_MOBILE(state, mobile) {
+  SET_MOBILE: (state, mobile) => {
     state.mobile = mobile
     saveToLocal('mobile', mobile)
   },
-  SET_GENDER(state, gender) {
+  SET_GENDER: (state, gender) => {
     state.gender = gender
     saveToLocal('gender', gender)
   },
-  SET_BIRTHDAY(state, birthday) {
+  SET_BIRTHDAY: (state, birthday) => {
     state.birthday = birthday
     saveToLocal('birthday', birthday)
   },
-  SET_NICKNANE(state, nickname) {
+  SET_NICKNANE: (state, nickname) => {
     state.nickname = nickname
     saveToLocal('nickname', nickname)
   },

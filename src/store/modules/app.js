@@ -4,7 +4,6 @@ import {getLanguage} from '@/lang'
 const state = {
   loading: false,
   language: getLanguage()
-
 }
 
 const mutations = {
@@ -25,7 +24,6 @@ const actions = {
     commit('SET_LANGUAGE', lang)
   }
 }
-
 
 export default {
   namespaced: true,

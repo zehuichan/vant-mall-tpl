@@ -1,5 +1,3 @@
-// api
-
 // mock data
 const data = [
   {
@@ -78,7 +76,7 @@ const state = {
 }
 
 const mutations = {
-  SET_COUPON_LIST(state, list) {
+  SET_COUPON_LIST: (state, list) => {
     state.coupon = list
   }
 }

@@ -8,7 +8,7 @@ const state = {
 }
 
 const mutations = {
-  INIT_WECHAT_STATE(state, flag) {
+  INIT_WECHAT_STATE: (state, flag) => {
     state.wechat_ready = flag
   }
 }
