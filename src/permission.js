@@ -10,6 +10,11 @@ NProgress.configure({showSpinner: false})
 router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start()
+  // 记录滚动位置
+  if (from.meta.keepAlive) {
+    const $main = document.querySelector('.app-main')
+    from.meta.scrollTop = $main ? $main.scrollTop : 0
+  }
 
   if (store.getters.mobile) {
     next()

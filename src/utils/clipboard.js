@@ -1,15 +1,15 @@
-import Vue from 'vue'
 import Clipboard from 'clipboard'
+import {Toast} from 'vant'
 
 function clipboardSuccess() {
-  Vue.prototype.$toast.success({
+  Toast.success({
     message: '已复制',
     duration: 1500
   })
 }
 
 function clipboardError() {
-  Vue.prototype.$toast.fail({
+  Toast.fail({
     message: '复制失败'
   })
 }

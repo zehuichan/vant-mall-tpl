@@ -1,10 +1,9 @@
 <template>
-  <div class="app-main" :class="classes">
-    <transition name="fade" mode="out-in">
-      <keep-alive :include="cachedViews">
-        <router-view :key="key"/>
-      </keep-alive>
-    </transition>
+  <div class="app-main" :class="classes" ref="$main">
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive" :key="key"/>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" :key="key"/>
   </div>
 </template>
 
@@ -21,22 +20,21 @@
       classes() {
         return this.hasPadding ? 'has-padding' : ''
       },
-      cachedViews() {
-        return [
-          'home',
-          'sort',
-          'expert',
-          'cart',
-          'my',
-        ]
-      },
       key() {
         return this.$route.path
       },
     },
+    updated() {
+      const keepAlive = this.$route.meta.keepAlive
+      const scrollTop = this.$route.meta.scrollTop
+      const $main = this.$refs.$main
+      if (keepAlive && scrollTop && $main) {
+        $main.scrollTop = scrollTop
+        console.log('scrollTop', scrollTop)
+      }
+    },
   }
 </script>
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" rel="stylesheet/less" type="text/less">
