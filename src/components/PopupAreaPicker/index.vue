@@ -7,15 +7,18 @@
         readonly
         clickable
         @click-input="onClick"
-        @click-right-icon="onClear">
+        @click-right-icon="onClear"
+    >
       <van-popup v-model="show" slot="extra" position="bottom" get-container="body">
         <van-area
             ref="area"
+            title="请选择"
+            :loading="loading"
             :area-list="area"
             :columns-placeholder="['请选择', '请选择', '请选择']"
             @cancel="onCancel"
-            @confirm="onConfirm">
-        </van-area>
+            @confirm="onConfirm"
+        />
       </van-popup>
     </van-field>
   </div>
@@ -40,7 +43,10 @@
       // Picker.props
       ...Area.props,
 
-      value: [String, Number, Object, Array],
+      value: {
+        type: Array,
+        default: () => []
+      },
       placeholder: String,
       disabled: Boolean,
       clearable: Boolean,
@@ -58,7 +64,8 @@
         return curr.join(this.separator)
       },
       code() {
-        return Array.from(this.value).pop()
+        const curr = Array.from(this.value).pop()
+        return curr && curr.code
       },
       $area() {
         return this.$refs.area
@@ -68,6 +75,7 @@
       return {
         area,
         show: false,
+        loading: false,
       }
     },
     methods: {
@@ -82,14 +90,15 @@
       },
       onConfirm(value, index) {
         this.show = false
-
-        this.$emit('input', value)
-        this.$emit('change', value, index)
+        this.$nextTick(() => {
+          this.$emit('input', value)
+          this.$emit('change', value, index)
+        })
       },
       onClick() {
         this.show = true
         this.$nextTick(() => {
-          this.$area.reset(this.code && this.code.code)
+          this.$area.reset(this.code)
         })
       }
     },
