@@ -48,7 +48,7 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        prependData: `@import "~@/assets/less/var.less";`
+        additionalData: `@import "~@/assets/less/var.less";`
       }
     }
   },
