@@ -40,9 +40,6 @@
       // Field.props
       ...Field.props,
 
-      // Picker.props
-      ...Area.props,
-
       value: {
         type: Array,
         default: () => []
@@ -90,10 +87,8 @@
       },
       onConfirm(value, index) {
         this.show = false
-        this.$nextTick(() => {
-          this.$emit('input', value)
-          this.$emit('change', value, index)
-        })
+        this.$emit('input', value)
+        this.$emit('change', value, index)
       },
       onClick() {
         this.show = true

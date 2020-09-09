@@ -29,7 +29,7 @@
     "nprogress": "^0.2.0",
     "tim-js-sdk": "^2.7.7",
     "vanilla-masker": "^1.2.0",
-    "vant": "^2.10.4",
+    "vant": "^2.10.6",
     "vue": "^2.6.12",
     "vue-count-to": "^1.0.13",
     "vue-i18n": "^8.21.0",
