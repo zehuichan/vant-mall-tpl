@@ -1,10 +1,19 @@
 <template>
   <div class="my">
     <div class="my-header">
-      <div class="avatar" @click="onClick('/my/account')">
-        <van-image width="100%" height="100%" :src="avatar"/>
+      <div class="my-setting">
+        <i class="iconfont icon-set"/>
+        <i class="iconfont icon-remind" style="vertical-align: -1px"/>
       </div>
-      <div class="nick-name">{{mobile | formatPhone}}</div>
+      <div class="my-info">
+        <div class="avatar" @click="onClick('/my/account')">
+          <van-image width="100%" height="100%" :src="avatar"/>
+        </div>
+        <div>
+          <div class="nick-name">{{mobile | formatPhone}}</div>
+          <div class="desc">你好，欢迎来到xxx商城</div>
+        </div>
+      </div>
     </div>
 
     <div class="my-body page-wrapper padded">
@@ -125,15 +134,31 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" rel="stylesheet/less" type="text/less">
-  @import "~@/assets/less/var.less";
-
   .my {
     .my-header {
       background-size: cover;
       background-image: url(~@/assets/img/bg.png);
-      padding: 64px 16px 32px;
-      display: flex;
-      align-items: center;
+      padding: 0 16px 32px;
+
+      .my-setting {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        text-align: right;
+
+        .iconfont {
+          line-height: 1;
+          font-size: @font28;
+        }
+
+        .iconfont + .iconfont {
+          margin-left: 8px;
+        }
+      }
+
+      .my-info {
+        display: flex;
+        align-items: center;
+      }
 
       .avatar {
         width: 60px;
@@ -142,6 +167,11 @@
       }
 
       .nick-name {
+      }
+
+      .desc {
+        font-size: @font12;
+        color: @text-l;
       }
     }
 

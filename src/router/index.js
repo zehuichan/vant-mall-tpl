@@ -9,27 +9,24 @@ import BasicLayout from '@/layouts/BasicLayout'
 import BlankLayout from '@/layouts/BlankLayout'
 
 // view components
+// tabs
+const Home = () => import('@/views/tabs/home')
+const Sort = () => import('@/views/tabs/sort')
+const Expert = () => import('@/views/tabs/expert')
+const Cart = () => import('@/views/tabs/cart')
+const Mine = () => import('@/views/tabs/mine')
 
 // Home
-const Home = () => import('@/views/home/home')
 const Search = () => import('@/views/home/search')
 
 // Product
 const ProductList = () => import('@/views/product/list')
 const ProductDetail = () => import('@/views/product/detail')
 
-// Sort
-const Sort = () => import('@/views/sort')
-
 // Expert
-const Expert = () => import('@/views/expert/expert')
 const ExpertDetail = () => import('@/views/expert/detail')
 
-// Cart
-const Cart = () => import('@/views/cart')
-
 // My
-const My = () => import('@/views/my/my')
 const Account = () => import('@/views/my/account')
 const AccountNickname = () => import('@/views/my/account-nickname')
 const AccountSecurity = () => import('@/views/my/account-security')
@@ -46,185 +43,176 @@ const RouteView = {
 }
 
 export const routes = [
+  {path: '/', redirect: '/tabs/home'},
+
+  // tabs
   {
-    path: '/',
-    component: RouteView,
-    redirect: '/home/index',
+    path: '/tabs/home',
+    component: BasicLayout,
     children: [
+      {
+        path: '/tabs/home',
+        name: 'home',
+        component: Home,
+        meta: {title: 'vant-mall-tpl', noCache: true}
+      },
+    ]
+  },
+  {
+    path: '/tabs/sort',
+    component: BasicLayout,
+    children: [
+      {
+        path: '/tabs/sort',
+        name: 'sort',
+        component: Sort,
+        meta: {title: '分类', noCache: true}
+      },
+    ]
+  },
+  {
+    path: '/tabs/expert',
+    component: BasicLayout,
+    children: [
+      {
+        path: '/tabs/expert',
+        name: 'expert-expert',
+        component: Expert,
+        meta: {title: '名家', noCache: true}
+      },
+    ]
+  },
+  {
+    path: '/tabs/cart',
+    component: BasicLayout,
+    children: [
+      {
+        path: '/tabs/cart',
+        name: 'cart',
+        component: Cart,
+        meta: {title: '购物车', noCache: true}
+      },
+    ]
+  },
+  {
+    path: '/tabs/mine',
+    component: BasicLayout,
+    children: [
+      {
+        path: '/tabs/mine',
+        name: 'mine',
+        component: Mine,
+        meta: {title: 'vant-mall-tpl', noCache: true}
+      },
+    ]
+  },
 
-      // home
+  // home
+  {
+    path: '/home',
+    component: BlankLayout,
+    children: [
       {
-        path: '/home',
-        component: BasicLayout,
-        children: [
-          {
-            path: '/home/index',
-            name: 'home',
-            component: Home,
-            meta: {title: 'vant-mall-tpl', noCache: true}
-          },
-        ]
+        path: '/home/search',
+        name: 'search',
+        component: Search,
+        meta: {title: 'vant-mall-tpl', noCache: true}
       },
-      {
-        path: '/home',
-        component: BlankLayout,
-        children: [
-          {
-            path: '/home/search',
-            name: 'search',
-            component: Search,
-            meta: {title: 'vant-mall-tpl', noCache: true}
-          },
-        ]
-      },
+    ]
+  },
 
-      // product
+  // product
+  {
+    path: '/product',
+    component: BlankLayout,
+    children: [
       {
-        path: '/product',
-        component: BlankLayout,
-        children: [
-          {
-            path: '/product/list',
-            name: 'product-list',
-            component: ProductList,
-            meta: {title: 'vant-mall-tpl', noCache: true}
-          },
-          {
-            path: '/product/detail',
-            name: 'product-detail',
-            component: ProductDetail,
-            meta: {title: 'vant-mall-tpl', noCache: true}
-          },
-        ]
+        path: '/product/list',
+        name: 'product-list',
+        component: ProductList,
+        meta: {title: 'vant-mall-tpl', noCache: true}
       },
+      {
+        path: '/product/detail',
+        name: 'product-detail',
+        component: ProductDetail,
+        meta: {title: 'vant-mall-tpl', noCache: true}
+      },
+    ]
+  },
 
+  // expert
+  {
+    path: '/expert',
+    component: BlankLayout,
+    children: [
+      {
+        path: '/expert/detail',
+        name: 'expert-detail',
+        component: ExpertDetail,
+        meta: {title: '名家', noCache: true}
+      },
+    ]
+  },
 
-      // sort
+  // my
+  {
+    path: '/my',
+    component: BlankLayout,
+    children: [
       {
-        path: '/sort',
-        component: BasicLayout,
-        children: [
-          {
-            path: '/sort/index',
-            name: 'sort',
-            component: Sort,
-            meta: {title: '分类', noCache: true}
-          },
-        ]
-      },
-
-      // expert
-      {
-        path: '/expert',
-        component: BasicLayout,
-        children: [
-          {
-            path: '/expert/index',
-            name: 'expert-expert',
-            component: Expert,
-            meta: {title: '名家', noCache: true}
-          },
-        ]
+        path: '/my/account',
+        name: 'account',
+        component: Account,
+        meta: {title: '我的资料', noCache: true}
       },
       {
-        path: '/expert',
-        component: BlankLayout,
-        children: [
-          {
-            path: '/expert/detail',
-            name: 'expert-detail',
-            component: ExpertDetail,
-            meta: {title: '名家', noCache: true}
-          },
-        ]
-      },
-
-      // cart
-      {
-        path: '/cart',
-        component: BasicLayout,
-        children: [
-          {
-            path: '/cart/index',
-            name: 'cart',
-            component: Cart,
-            meta: {title: '购物车', noCache: true}
-          },
-        ]
-      },
-
-      // my
-      {
-        path: '/my',
-        component: BasicLayout,
-        children: [
-          {
-            path: '/my/index',
-            name: 'my',
-            component: My,
-            meta: {title: 'vant-mall-tpl', noCache: true}
-          },
-        ]
+        path: '/my/account-nickname',
+        name: 'account-nickname',
+        component: AccountNickname,
+        meta: {title: '更改昵称', noCache: true}
       },
       {
-        path: '/my',
-        component: BlankLayout,
-        children: [
-          {
-            path: '/my/account',
-            name: 'account',
-            component: Account,
-            meta: {title: '我的资料', noCache: true}
-          },
-          {
-            path: '/my/account-nickname',
-            name: 'account-nickname',
-            component: AccountNickname,
-            meta: {title: '更改昵称', noCache: true}
-          },
-          {
-            path: '/my/account-security',
-            name: 'account-security',
-            component: AccountSecurity,
-            meta: {title: '支付密码', noCache: true}
-          },
-          {
-            path: '/my/order-list',
-            name: 'order-list',
-            component: OrderList,
-            meta: {title: '我的订单', noCache: true}
-          },
-          {
-            path: '/my/order-detail',
-            name: 'order-detail',
-            component: OrderDetail,
-            meta: {title: '订单详情', noCache: true}
-          },
-          {
-            path: '/my/integral',
-            name: 'integral',
-            component: Integral,
-            meta: {title: '我的积分', noCache: true}
-          },
-          {
-            path: '/my/coupon',
-            name: 'coupon',
-            component: Coupon,
-            meta: {title: '卡券管理', noCache: true}
-          },
-          {
-            path: '/my/address',
-            name: 'address',
-            component: Address,
-            meta: {title: '地址管理', noCache: true}
-          },
-          {
-            path: '/my/assistant',
-            name: 'assistant',
-            component: Assistant,
-            meta: {title: '劳动关系助手', noCache: true}
-          },
-        ]
+        path: '/my/account-security',
+        name: 'account-security',
+        component: AccountSecurity,
+        meta: {title: '支付密码', noCache: true}
+      },
+      {
+        path: '/my/order-list',
+        name: 'order-list',
+        component: OrderList,
+        meta: {title: '我的订单', noCache: true}
+      },
+      {
+        path: '/my/order-detail',
+        name: 'order-detail',
+        component: OrderDetail,
+        meta: {title: '订单详情', noCache: true}
+      },
+      {
+        path: '/my/integral',
+        name: 'integral',
+        component: Integral,
+        meta: {title: '我的积分', noCache: true}
+      },
+      {
+        path: '/my/coupon',
+        name: 'coupon',
+        component: Coupon,
+        meta: {title: '卡券管理', noCache: true}
+      },
+      {
+        path: '/my/address',
+        name: 'address',
+        component: Address,
+        meta: {title: '地址管理', noCache: true}
+      },
+      {
+        path: '/my/assistant',
+        name: 'assistant',
+        component: Assistant,
+        meta: {title: '劳动关系助手', noCache: true}
       },
     ]
   },

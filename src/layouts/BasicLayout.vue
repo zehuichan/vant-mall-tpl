@@ -4,24 +4,24 @@
     <app-main has-padding/>
     <!--tabbar-->
     <van-tabbar v-model="active" active-color="#c03131" inactive-color="#2e2f30">
-      <van-tabbar-item name="home" to="/home/index">
-        <i slot="icon" class="iconfont icon-feed-logo"></i>
+      <van-tabbar-item name="home" to="/tabs/home">
+        <i slot="icon" class="iconfont icon-feed-logo"/>
         {{$t('navbar.home')}}
       </van-tabbar-item>
-      <van-tabbar-item name="sort" to="/sort/index">
-        <i slot="icon" class="iconfont icon-all"></i>
+      <van-tabbar-item name="sort" to="/tabs/sort">
+        <i slot="icon" class="iconfont icon-all"/>
         {{$t('navbar.sort')}}
       </van-tabbar-item>
-      <van-tabbar-item name="expert-expert" to="/expert/index">
+      <van-tabbar-item name="expert" to="/tabs/expert">
         <i slot="icon" class="iconfont icon-dongtai"></i>
         {{$t('navbar.expert')}}
       </van-tabbar-item>
-      <van-tabbar-item name="cart" to="/cart/index" :badge="items_length">
-        <i slot="icon" class="iconfont icon-cart-Empty"></i>
+      <van-tabbar-item name="cart" to="/tabs/cart" :badge="items_length">
+        <i slot="icon" class="iconfont icon-cart-Empty"/>
         {{$t('navbar.cart')}}
       </van-tabbar-item>
-      <van-tabbar-item name="my" to="/my/index">
-        <i slot="icon" class="iconfont icon-bussiness-man"></i>
+      <van-tabbar-item name="mine" to="/tabs/mine">
+        <i slot="icon" class="iconfont icon-bussiness-man"/>
         {{$t('navbar.my')}}
       </van-tabbar-item>
     </van-tabbar>

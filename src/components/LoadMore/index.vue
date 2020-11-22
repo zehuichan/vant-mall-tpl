@@ -38,10 +38,26 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" rel="stylesheet/less" type="text/less">
+<style lang="less" scoped>
   .load-more {
     .van-loading {
       display: inline-block;
+    }
+
+    .van-list {
+      &__loading,
+      &__finished-text,
+      &__error-text {
+        color: #969799;
+        font-size: 14px;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      &__placeholder {
+        height: 0;
+        pointer-events: none;
+      }
     }
   }
 </style>

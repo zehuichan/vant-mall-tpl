@@ -57,7 +57,7 @@
       background-image: url(~@/assets/img/bg.png);
       background-size: cover;
       text-align: center;
-      padding: 32px;
+      padding: 48px;
 
       .top {
         font-size: @font12;
