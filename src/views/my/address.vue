@@ -23,7 +23,6 @@
           <span class="delete">删除</span>
         </div>
       </div>
-
     </div>
 
     <create-by/>
