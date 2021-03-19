@@ -1,7 +1,7 @@
 // filters
 import {formatPhone} from '@/filters'
 // utils
-import {saveToLocal, loadFromLocal, removeFromLocal} from '@/utils'
+import {saveToLocal, loadFromLocal} from '@/utils'
 
 const state = {
   avatar: loadFromLocal('avatar') || 'https://mall.s.maizuo.com/e915e2c990c30f8efa9e30bc75da41ee.jpg',
